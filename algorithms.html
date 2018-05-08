@@ -803,28 +803,28 @@
 
         //Single linked list from https://vimeo.com/258033256/753d89ad4b, beginning of video
 
-        function SLNode(value){
-            //node generator
-            this.val =value;
-            this.next =null;
-        }
+        // function SLNode(value){
+        //     //node generator
+        //     this.val =value;
+        //     this.next =null;
+        // }
 
-        function SLList(){
-            //list blueprint, designates a head
-            this.head =null;
-            this.tail =null;
-        }
+        // function SLList(){
+        //     //list blueprint, designates a head
+        //     this.head =null;
+        //     this.tail =null;
+        // }
 
-        // (creates new nodes with values of 1-4) new create new object
-        node1= new SLNode(1);
-        node2= new SLNode(22);
-        node3= new SLNode(3);
-        node4= new SLNode(4);
+        // // (creates new nodes with values of 1-4) new create new object
+        // node1= new SLNode(1);
+        // node2= new SLNode(22);
+        // node3= new SLNode(3);
+        // node4= new SLNode(4);
         
-        //links nodes. 
-        node1.next = node2; 
-        node2.next = node3;
-        node3.next = node4;    
+        // //links nodes. 
+        // node1.next = node2; 
+        // node2.next = node3;
+        // node3.next = node4;    
         
         // function delEnd(node){
         //     var current=node;
@@ -983,15 +983,37 @@
         //     }
         // }
  
+        // function shiftValuesByNum(arr, num){
+
+        //     while (num > 0) {
+        //         for (let i = arr.length; i > 0; i--) {
+        //             arr[i] = arr[i-1];
+        //         }   
+        //         console.log(arr);
+        //         arr[0] = arr.pop();
+        //         num--;
+        //     }
+
+        //     return arr;
+        //     };
+
+        // console.log(shiftValuesByNum([1,2,3,4,5], 1));
+        // console.log(shiftValuesByNum([1,2,3,4,5], 2));
+        // console.log(shiftValuesByNum([1,2,3,4,5], 3));
+        // console.log(shiftValuesByNum([1,2,3,4,5], 4));
         // function shiftValue(arr,num){
+        //     //increases array length to accomodate some new values. Feel free to console log along the way to see what is happening!
         //     arr.length=arr.length+num;
+        //     //shifts all of the array values forward 
         //     for (var i=arr.length-1; i>=0; i--){
         //             arr[i]=arr[i-num];
         //     }
+        //     //moves the shifting values from the end of the array
         //     for(var j=0; j<num;j++){
         //         arr[j]=arr[j+arr.length-num];
 
         //     }
+        //     //pops off all of the extra undefined spaces to restore array length
         //     var counter=num
         //     while (counter>0){
         //         arr.pop();
@@ -1005,67 +1027,813 @@
         // display(node1);
 
         //My way
-        function removeDups(arr){
-            arr.sort();
-            var counter=0;
-            for (var i=0;i<arr.length;i++){
-                if (arr[i+1]==arr[i]){
-                    counter++;
-                    delete arr[i];
-                }
-            }
-            arr.sort();
-            for (var j=0;j<counter;j++){
-                arr.pop();
-            }
-            return arr;
-        }
+        // function removeDups(arr){
+        //     arr.sort();
+        //     var counter=0;
+        //     for (var i=0;i<arr.length;i++){
+        //         if (arr[i+1]==arr[i]){
+        //             counter++;
+        //             delete arr[i];
+        //         }
+        //     }
+        //     arr.sort();
+        //     for (var j=0;j<counter;j++){
+        //         arr.pop();
+        //     }
+        //     return arr;
+        // }
         
-        removeDups([1,1,2,2,3,3,4,5,6]);
+        // removeDups([1,1,2,2,3,3,4,5,6]);
 
         //other ways- Create a set, wont allow duplicates. 
 
 
-        function kthLarge(arr, num){
-            arr.sort();
-            var counter=0;
-            for (var i=0;i<arr.length;i++){
-                if (arr[i+1]==arr[i]){
-                    counter++;
-                    delete arr[i];
-                }
-            }
-            arr.sort();
-            for (var j=0;j<counter;j++){
-                arr.pop();
-            }
-            return arr[arr.length-num];
-        }
-        kthLarge([1,1,2,2,3,3,4,5,6], 2);
+        // function kthLarge(arr, num){
+        //     arr.sort();
+        //     var counter=0;
+        //     for (var i=0;i<arr.length;i++){
+        //         if (arr[i+1]==arr[i]){
+        //             counter++;
+        //             delete arr[i];
+        //         }
+        //     }
+        //     arr.sort();
+        //     for (var j=0;j<counter;j++){
+        //         arr.pop();
+        //     }
+        //     return arr[arr.length-num];
+        // }
+        // kthLarge([1,1,2,2,3,3,4,5,6], 2);
         
-        function sequence(arr){
-            arr.sort();
-            var array2=[];
-            var counter=1;
-            var pos=0;
-            for (var i=0; i<arr.length; i++){
-                if (arr[i+1]===arr[i]+1){
-                    counter++;
-                    pos=i+1;
-                    continue;
-                }
-                console.log(counter);
-            }
-            for (var j=counter; j>0;j--){
-                array2.push(arr[pos-j+1]);
-            }
-            console.log(array2);
-        }
-        sequence([1,2,3,4,5,6,50,42,28,29,30,31,18]);
+        // function sequence(arr){
+        //     arr.sort();
+        //     var array2=[];
+        //     var counter=1;
+        //     var pos=0;
+        //     for (var i=0; i<arr.length; i++){
+        //         if (arr[i+1]===arr[i]+1){
+        //             counter++;
+        //             pos=i+1;
+        //             continue;
+        //         }
+        //         console.log(counter);
+        //     }
+        //     for (var j=counter; j>0;j--){
+        //         array2.push(arr[pos-j+1]);
+        //     }
+        //     console.log(array2);
+        // }
+        // sequence([1,2,3,4,5,6,50,42,28,29,30,31,18]);
 
         //for exam, can use split, join, pop, push built in functions. 
 
+
+        // Double linked lists
+
+        // function dlNode(value){
+        //     //node object constructor
+        //     if (!(this instanceof dlNode)){
+        //         return new dlNode(value);
+        //     }
+        //     this.val = value;
+        //     this.prev = null;
+        //     this.next = null;
+        //     }
+
+        // function dList(){
+        //     //dlist object constructor
+        //     if (!(this instanceof dList)){
+        //         return new dList();
+        //     }
+        //     this.head = null;
+        //     this.tail = null;
+        //     }
+        
+        // //constructing new nodes
+
+        // node1= new dlNode(1);
+        // node2= new dlNode(2);
+        // node3= new dlNode(3);
+        // node4= new dlNode(4);
+        // node5= new dlNode(5); 
+        
+        // //linking the nodes
+        // node1.next= node2;
+        // node1.prev= null;
+
+        // node2.next= node3;
+        // node2.prev=node1;
+
+        // node3.next=node4;
+        // node3.prev=node2;
+
+        // node4.next=node5;
+        // node4.prev=node3;
+
+        // node5.next=null;
+        // node5.prev=node4;
+
+        // //creates new formatted doubly linked list
+        // mylist= new dList();
+
+        // //designates head and tail properties
+
+        // mylist.head = node1;
+        // mylist.tail = node5;
+
+        //prepend. Add a node with new value before a node with a target value. Edge cases, what if head node is the value? redefine head
+
+        // function prepend(list, newVal, targetVal){
+        //     //checks if list exists
+        //     if (list){
+        //         //sets a traversing variable and creates a new node through node factory with new value
+        //         var current = list.head;
+        //         var newNode = new dlNode(newVal);
+        //         //edge case if target value is at the head
+        //         if (current.val=== targetVal){
+        //             current.prev=newNode;
+        //             newNode.next=current;
+        //             list.head=newNode    
+        //         }
+        //         //otherwise, finds target value and relinks network between previous node, new node and current node
+        //         while (current){
+        //             if (current.val===targetVal){
+        //                 after=current;
+        //                 before=current.prev;
+        //                 after.prev= newNode;
+        //                 before.next= newNode;
+        //                 newNode.next= after;
+        //                 newNode.prev= before;
+        //             }
+        //             current=current.next
+        //         }
+        //         return list;
+        //     }
+        // }
+
+        // prepend(mylist, 9, 1);
+
+        //kth to last value function. return node value kth from last
+
+        // function kthLast(list, k){
+        //     if (list){
+        //         var current = list.head;
+        //         //finds last node of list
+        //         while (current.next!=null){
+        //             current = current.next;
+        //             }
+        //             console.log(current.val);
+        //         // counts back 'k' times until it hits kth from last node
+        //         while (k>0){
+        //             current=current.prev;
+        //             k--;
+        //         }
+        //         return current.val;
+        //     }
+        // } 
+
+        // kthLast(mylist, 2);
+
+        // runs through a list and makes sure head and tail nodes are where they say they are
+        // function validDlist(list){
+        //     //
+        //     if (list){
+        //         var current = list.head;
+        //         //iterates to end of dl list
+        //         while (current.next!=null){
+        //             current=current.next;
+        //         }
+        //         //checks if last node is equal to tail
+        //         if (current!=list.tail){
+        //             return false;
+        //         }
+        //         //iterates back to first node
+        //         while (current.prev!=null){
+        //             current=current.prev;
+        //         }
+        //         //checks if first node is the head
+        //         if (current!=list.head){
+        //             return false;
+        //         }
+        //         //if it makes it this far, list works!
+        //         else {return true;}
+        //     }
+        // }
+        // validDlist(mylist);
+
+        //palidrome function. Checks whether dl list is palindromic
+        // function dlPalinddrome(list){
+        //     //iterates through list and pushes values to an array. checks array against reverse array to see if it is the same
+        //     if (list){
+        //         var current = list.head;
+        //         var arr1 = [];
+        //         var arr2 = [];
+        //         while (current.next!=null){
+        //             arr1.push(current.val);
+        //             current = current.next;
+        //         }
+        //         arr1.push(current.val);
+        //         while (current.prev!=null){
+        //             arr2.push(current.val);
+        //             current = current.prev;
+        //         }
+        //         arr2.push(current.val);
+        //         if (arr1=arr2){
+        //             return true;
+        //         }
+        //         else {return false;}
+        //     }
+        // }
+        // dlPalinddrome(mylist);
+
+        //function loop start- determines if the list is actually looped. if so, returns node that begins loop 
+        
+        // function loopStart(list){
+        //     if (list){
+        //         var current = list.head;
+        //         while (current.next!=null){
+        //             current = current.next;
+        //             if (current.next === list.head){
+        //                 console.log(current);
+        //                 return current;
+        //                 break
+        //             }
+        //             else if (current.next == null){
+        //                 console.log("not loopin");
+        //                 return false;
+        //             }
+        //         }
+        //     }
+        // }
+        // loopStart(mylist);
+    
+        // =============================
+        // ======Algorithms IV==========
+        // ==Recursive/Binary Tree======
+        // =============================
+
+        // function rSigma(num, counter=0, sum=0){
+        //     // Write a recursive function that, given a number, returns the sum of integers from one up to that number. For example, rSigma(5) = 1+2+3+4+5 = 15; rSigma(2.5) = 1+2 = 3; rSigma(-1) = 0.
+        //     //floors num value so that it doesn't run beyond integer values
+        //     if (counter>=Math.floor(num)||num<0){
+        //         console.log(sum);
+        //         return sum;
+        //     }
+        //     //runs the function for each integer value
+        //     counter++;
+        //     sum=sum+counter;
+        //     rSigma(num, counter, sum);
+        // }
+
+        // or... without extra parameters. Jason's method
+
+        // var counter = 0;
+
+        // function rsigma(n) {
+        //     if (n<=0){return 0;}
+
+        //     if (counter++ > 1000) {throw new Error "whoops!"}
+            
+        //     return rsigma(n-1)+Math.floor(n);
+        // }
+
+        // rSigma(2);
+        // rSigma(2.5);
+        // rSigma(5)
+        // rSigma(-1);
+
+        // function rBinarySearch(arr, val, index=0){
+        //     // Write a recursive function that, given a sorted array and a value, determines whether the value is found within the array. For example, rBinarySearch([1,3,5,6], 4) = false; rBinarySearch([4,5,6,8,12], 5) = true.
+        //     //checks 0 index first, finds cases where array is empty. First Solution
+        //     if (index===arr.length){
+        //         console.log("false");
+        //         return false;
+        //     }
+        //     if (arr[index]===val){
+        //         console.log("true");
+        //         console.log("The value in question is located at the index of", index);
+        //         return true;
+        //     }
+        //     index++;
+        //     console.log("index is ", index);
+        //     rBinarySearch(arr, val, index);
+        // }
+
+        // function rBinarySearch(arr, val, start=0, end=arr.length-1){
+        //     // Write a recursive function that, given a sorted array and a value, determines whether the value is found within the array. For example, rBinarySearch([1,3,5,6], 4) = false; rBinarySearch([4,5,6,8,12], 5) = true.
+        //         //more recursive solution. Defines a middle point and searches for higher or lower. This moves forward
+        //     var middle=Math.floor((start+end)/2);
+        //     //if middle is the value or middle +1 (for rounding errors with Math.floor)
+        //     if (arr[middle]===val||arr[middle+1]===val) {console.log("true"); return true;}
+        //     //end condition
+        //     else if (middle<=0||end-start===1){console.log("false"); return false;}
+        //     //forward progress
+        //     else if (val>arr[middle]){
+        //         return rBinarySearch(arr, val, middle, end);
+        //     }
+        //     //backwards progress
+        //     else if (val<arr[middle]){
+        //         return rBinarySearch(arr, val, start, middle);
+        //     }
+        //     }
+            
+
+        // rBinarySearch([], 4);
+        // rBinarySearch([1,2,3,4,5,6,7,8,9,10], 11);
+
+        // function rFib(num, a=0, b=1, total=null, counter=2){
+        //     // Write rFib(num). Recursively compute and return the numth Fibonacci value. As earlier, treat the first two (num = 0, num = 1) Fibonacci values as 0 and 1. Thus, rFib(2) = 1 (0+1); rFib(3) = 2 (1+1); rFib(4) = 3 (1+2); rFib(5) = 5 (2+3). Also, rFib(3.65) = rFib(3) = 2. Finally, rFib(-2) = rFib(0) = 0.
+        //     //taking care of default values
+        //     if (num===0||num<0){
+        //         console.log(0);
+        //         return 0;
+        //     }
+        //     if (num===1){
+        //         console.log(1);
+        //         return 1;
+        //     }
+        //     //doing the fibonacci substitutions
+        //     total=a+b;
+        //     a=b;
+        //     b=total;
+        //     //base case
+        //     if (counter===Math.floor(num)){
+        //         console.log(total);
+        //         return total;
+        //     }
+        //     //forward progress
+        //     counter++;
+        //     //call itself
+        //     rFib(num, a, b, total, counter);
+        // }
+        
+        // Jason's solution
+        // function rFib(n){
+        //     // base cases
+        //     if (n < 1) {return 0;}
+        //     if (n===1) {return 0;}
+
+        //     return rFib(Math.floor(n)-1) + rFib(Math.floor(n)-2);
+        // }
+        
+        // function rTrib(n){
+        
+        //     // base cases
+        //     if (n < 1) {return 0;}
+        //     if (n===1) {return 0;}
+        //     if (n===2) {return 1;}
+
+        //     return rTrib(Math.floor(n)-1) + rTrib(Math.floor(n)-2) + rTrib(Math.floor(n)-3);
+        // }
+
+        // console.log(rFib(2));
+        // console.log(rFib(3));
+        // console.log(rFib(4));
+        // console.log(rFib(6));
+        // console.log(rFib(3.65));
+        // console.log(rFib(-2));
+        // console.log(rFib(0));
+
+        
+
+        // function floodFill(canvas, startXY, newColor, oldColor){
+        //     //defines start point
+        //     var x = startXY[0];
+        //     var y = startXY[1];
+        //     //defines the old color only once
+        //     if (!oldColor){
+        //         oldColor=canvas[y][x];
+        //     }
+        //     //base case, won't act on any values that aren't the old color
+        //     if (canvas[y][x] !== oldColor){
+        //         return;
+                
+        //     }
+        //     //changes old color to new color
+        //     canvas[y][x]=newColor;
+        //     //recursive call for each direction. I had messed up before by not adding or subtracting from x, y in the conditional
+        //     if (x+1<canvas[y].length){
+        //         floodFill(canvas, [(x+1),y], newColor, oldColor);
+        //     }
+        //     if (y-1>=0){
+        //         floodFill(canvas, [x,(y-1)], newColor, oldColor);
+        //     }
+        //     if (y+1<canvas.length){
+        //         floodFill(canvas, [x,(y+1)], newColor, oldColor);
+        //     }
+        //     if (x-1>=0){
+        //         floodFill(canvas, [(x-1),y], newColor, oldColor);
+        //     }
+        // }    
+        // var canvas = [  
+        //     [3,2,3,4,3],
+        //     [2,3,3,4,0],
+        //     [7,3,3,4,1],
+        //     [6,5,3,4,1],
+        //     [1,2,3,3,3] ]
+        
+        // floodFill(canvas, [2,2], 9);
+        // console.log(canvas);
+        
+        
+        // function rNode(node){
+        //     // Given the first node of a singly linked list, create a recursive function that returns the number of nodes in that list. You can assume the list contains no loops, and that it is short enough that you will not ‘blow your stack’. 
+            
+        //     //this is not summing the value, why?
+        //     if (!node){return 0;}
+        //     else {
+        //         node=node.next;
+        //     }
+
+        //     return rNode(node)+1;
+
+        // }
+        // console.log(rNode(node1));
+
+        //-------------------------------------
+        //------Binary Search Trees------------
+        //-------------------------------------
+
+        // questions: how to use the root generator to add classes. I'm just making functions
+
+
+        //binary node generator
+        // function btNode(value) {
+        //     this.val = value;
+        //     this.left = null;
+        //     this.right = null;
+        // }
+        // // //root generator
+        // // function bst() {
+        // //     this.root = null;
+        // // }
+
+
+        // //constructing new nodes
+
+        // node1= new btNode(1);
+        // node2= new btNode(2);
+        // node3= new btNode(3);
+        // node4= new btNode(4);
+        // node5= new btNode(5); 
+        // node6= new btNode(6);
+        // node7= new btNode(7); 
+        
+        // //linking nodes
+        // node4.right = node6;
+        // node4.left = node3;
+        
+        // node3.left = node2;
+        
+        // node2.left = node1;
+
+        // node6.left = node5;
+        // node6.right = node7;
+
+      
+        
+
+       
+        
+        
+        // //Create an add(val) method on the bst object to add a new value to the tree. This entails creating a btNode with this value and connecting it at the appropriate place in the tree. Note: BSTs can contain duplicate values.
+        
+    
+        // //root generator
+        // function bst() {
+        //     this.root = null;
+        //     this.add = function (val) {
+        //         //added, doesn't make sense
+        //         var root = this.root;
+        //         //added, doesn't make sense
+        //         if (!this.root){
+        //             this.root = new btNode(val);
+        //             return;
+        //         }
+        //         //creates new node and sets root to current
+        //         var newnode= new btNode(val);
+        //         var current = root;
+        //         //keeps going right or left depending on greater/less values and attaches to an empty end
+        //         while (current){
+        //             if (val < current.val){
+        //                 if (!current.left){
+        //                     current.left=newnode;
+        //                     break;
+        //                 }
+        //                 else {
+        //                     current = current.left;
+        //                 }
+        //             }
+        //             else {
+        //                 if (!current.right){
+        //                     current.right = newnode;
+        //                     break;
+        //                 }
+        //                 else {
+        //                     current = current.right;
+        //                 }
+        //             }
+        //         }  
+        //     }
+        //     this.min = function () {
+        //         if (!this.root){
+        //             return false;
+        //         }
+
+        //         var current = this.root;
+            
+        //         while (current) {
+        //             current = current.left;
+        //             if (current.left == null){
+        //                 return current.val;
+        //             }
+        //         }
+        //     }
+        //     this.max = function () {
+        //         if (!this.root){return false;}
+
+        //         var current = this.root;
+            
+        //         while (current) {
+        //             current = current.right;
+        //             if (current.right == null){
+        //                 return current.val;
+        //             }
+        //         }
+        //     }
+        //     this.contains = function (val){
+        //         if (!this.root){return false;}
+        //         var current = this.root;
+                
+        //         while (current){
+        //             if (current.val === val) {return true;}
+        //             else if (val<current.val){
+        //                 if (current.left==null) {return false;}
+        //                 else {current = current.left;}
+        //                 contains(val,current);
+        //             }
+        //             else if (val>=current.val){
+        //                 if (current.right== null){return false;}
+        //                 else {
+        //                 current=current.right;
+        //                 contains(val,current);
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     this.sizes = function (){
+        //         var counter= 0;
+        //         if (this.root){
+        //             counter++;
+        //             rSizes(this.root);
+        //         }
+        //         function rSizes(node){
+        //             if (node.right){
+        //                 counter++;
+        //                 rSizes(node.right);
+        //             }
+        //             if (node.left){
+        //                 counter++;
+        //                 rSizes(node.left);
+        //             }
+        //         }
+        //         return counter;
+                
+        //     }
+        //     this.isEmpty = function (){
+        //         //checks if a BST contains values. If there is an empty value on a node, it will return false. 
+        //         if (this.root){
+        //             empty(this.root);
+        //         }
+        //         else {return false;}
+        //         function empty(node){
+        //             if (node.right){
+        //                 if (node.val===null){
+        //                     return false;
+        //                 }
+        //                 empty(node.right);
+        //             }
+        //             if (node.left){
+        //                 if (node.val===null){
+        //                     return false;
+        //                 }
+        //                 empty(node.left);
+        //             }
+        //         }
+        //         return true;
+        //     }
+        //     this.remove = function (val){
+        //         if (this.root){
+        //             valNull(this.root);
+        //         }
+        //         function valNull(node){
+        //             if (node.val===val){
+        //                 console.log("replaced");
+        //                 node.val=null;
+        //             }
+        //             else{
+        //                 if (node.right){
+        //                     valNull(node.right);
+        //                 }
+        //                 if (node.left){
+        //                     valNull(node.left);
+        //                 }
+        //                 return false;
+        //             }
+                    
+
+        //         }
+
+        //     }
+        //     this.removeAll = function(){
+        //         //removes all vales in a BST turning them into null
+        //         if (this.root){
+        //             nullify(this.root);
+        //         }
+        //         function nullify(node){
+        //             node.val=null;
+        //             if (node.left){
+                        
+        //                 nullify(node.left);
+        //             }
+        //             if (node.right){
+                        
+        //                 nullify(node.right);
+        //             }
+        //         }
+        //     }
+        //     this.isValid = function(){
+                
+        //         //checks for downstream node values that don't follow the right/left hierarchy. test with Seth's code. 
+        //         if (this.root){
+        //             checkRL(this.root);
+        //         }
+        //         function checkRL(node){
+        //             if (node.left){
+        //                 if (node.left.val>=node.val){
+        //                     console.log("falso");
+        //                     return false;
+        //                 }
+        //                 else {
+        //                     checkRL(node.left);
+        //                 }
+        //             }
+        //             if (node.right){
+        //                 if (node.right.val<node.val){
+        //                     console.log("falso");
+        //                     return false;
+        //                 }
+        //                 else {
+        //                     checkRL(node.right);
+        //                 }
+        //             }
+                    
+        //         }
+        //     }
+        // }
+        
+        // var newTree = new bst();
+
+        // newTree.add(8);
+        // newTree.add(109);
+        // newTree.add(9);
+        // newTree.add(2);
+        // newTree.add(1);
+        // newTree.add(3);
+        // console.log(newTree.isValid());
+        
+        // ////////////////////////
+        // ///Queues and Stacks////
+        // ////////////////////////
+
+        //Constructor Function
+
+        function SLNode(value) {
+            this.val = value;
+            this.next = null;
+        }
+
+        function SLQueue() {
+            this.head = null; //front of list
+            this.tail = null; //back of list
+            //create SLQueue method enqueue(val) to add the given value to end of queue
+            this.enqueue = function(val){
+                //Create new node
+                let newNode = new SLNode(val);
+                //Check if tail exists
+                
+
+                if (!this.tail){
+                //  if it doesn't, set new node as head and tail
+                    this.head = newNode;
+                    this.tail = newNode;
+                    return this;
+                }
+                //If it does, link tail to new node
+                this.tail.next = newNode;
+                // assign new node to tail
+                this.tail = newNode;
+                return this;
+            }
+            this.front = function(){
+                //Create SLQueue method front() to return the value at front of our queue, without removing it.
+                if (this.head){
+                    return this.head.val;
+                }
+                else {return false};
+            }
+            this.dequeue = function(){
+                //Create SLQueue method dequeue() to remove and return value at front of queue
+                //check if head
+                if (!this.head){return false;}
+                else {
+                    var tempNode = this.head;
+                    if (this.head.next){
+                        this.head= this.head.next;
+                    }
+                    tempNode.next=null;
+                    return tempNode.val;
+                }
+            }
+            this.contains = function(val){
+                //Create method contains(val) to return whether given value is found within our queue.
+                //does not account for lack of head/null head values
+                if (this.head){
+                    var crawler = this.head;
+                    while (crawler){
+                        if (crawler.val=== val){
+                            return true;
+                        }
+                        else {crawler=crawler.next;}
+                    }
+                    return false;
+                }
+            }
+            this.isEmpty = function(){
+                //Create SLQueue method isEmpty() thatreturns whether our queue contains no values.
+                //true = empty, false = contains values
+                if (!this.head){return true;}
+                var crawler = this.head;
+                while (crawler){
+                    if (crawler.val==null){return true;}
+                    else {crawler=crawler.next;}
+                }
+                return false;
+            }
+        }
+        
+        //building a few nodes
+        const queue = new SLQueue();
+        const queue2 = new SLQueue();
+        const node1 = new SLNode(1);
+        const node2 = new SLNode(2);
+        const node3 = new SLNode(3);
+        const node4 = new SLNode(4);
+        const node5 = new SLNode(5);
+        
+        node1.next= node2;
+        node2.next= node3;
+        node3.next= node4;
+        node4.next= node5;
+
+        queue.head = node1;
+        queue.tail = node5;
+
+        queue2.head = node1;
+        queue2.tail = node5;
+
+        console.log(queue);
+        console.log(queue2);
+
+        function compareQueues (queue1, queue2){
+            //Given two SLQueue objects, create a standalone function that returns whether they are equal. Queues are equal only if they have equal elements in identical order. Allocate no other object, and return the queues in their original condition upon exit.
+            if (queue1.head&&queue2.head){
+                //after checking for a head, creates a temp node to traverse both queues
+                var crawler1 = queue1.head;
+                var crawler2 = queue2.head;
+                
+                while (crawler1){
+                    if (crawler1.val!==crawler2.val){
+                        return false;
+                    }
+                    else {
+                        crawler1 = crawler1.next;
+                        crawler2 = crawler2.next;
+                    }
+                }
+                if (crawler2){return false;}
+                else {return true;}
+            }
+        }
+        console.log(compareQueues(queue, queue2));
+
+
+
+        
+        
+            
     </script>
 </body>
+
 </html>
 
